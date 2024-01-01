@@ -1,4 +1,5 @@
 const app = require('express')();
+const express=require('express');
 const http = require('http')
 const {Server} = require('socket.io')
 const server = http.createServer(app);
@@ -8,6 +9,7 @@ const {updateMLoptionindb, setMLoption} = require('./MLoptionselector.js')
 
 
 app.use(cors());
+app.use(express.json());
 
 // Add the CORS middleware
 app.use(function (req, res, next) {

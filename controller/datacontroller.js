@@ -94,6 +94,16 @@ const postdata = async (req,res) => {
     }
 }
 
+const dataFromEsp=async (req,res) =>{
+    try{
+        console.log("data receiving from esp",req.body);
+        return res.send("received")
+    }
+    catch{
+        console.log("not received data from esp32");
+    }
+}
+
 
 
 const feeddata = async (req,res) => {
@@ -109,4 +119,4 @@ const feeddata = async (req,res) => {
     }
 }
 
-module.exports = {getdata, getdownload, feeddata, postdata};
+module.exports = {getdata, getdownload, feeddata, postdata,dataFromEsp};
