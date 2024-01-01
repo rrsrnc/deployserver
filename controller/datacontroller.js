@@ -96,7 +96,7 @@ const postdata = async (req,res) => {
 
 const dataFromEsp=async (req,res) =>{
     try{
-        console.log("data receiving from esp",req.body);
+        console.log("data receiving from esp",req.query.temp1);
         return res.send("received")
     }
     catch{

@@ -4,6 +4,6 @@ const router = express.Router();
 
 router.route('/s').get(getdata).post(feeddata,postdata);
 router.route('/download').get(getdownload);
-router.route('/senddata').post(dataFromEsp);
+router.route('/senddata').get(dataFromEsp);
 
 module.exports = router;
