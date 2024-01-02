@@ -16,8 +16,9 @@ const PredictEmit = (temp1, temp2, temp3)=> {
         mypredict = (Number(new TextDecoder().decode(data))).toFixed(4);
         // console.log(mypredict)
         let today = new Date();
-        let mydate= (today.getDate())+"-"+(today.getMonth()+1)+"-"+(today.getFullYear());
-        let mytime= (today.getHours())+":"+(today.getMinutes())+":"+(today.getSeconds());
+        let options = { timeZone: 'Asia/Kolkata' };
+        let mydate = today.toLocaleDateString('en-IN', options);
+        let mytime = today.toLocaleTimeString('en-IN', options);
         let td_data = {username:'user1',deflection: mypredict, MLmodel:modelname, temp1, temp2, temp3, date: mydate, time : mytime};
         // console.log(td_data);
             io.sockets.emit('deflection_data', td_data);
