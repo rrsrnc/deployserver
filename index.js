@@ -52,19 +52,19 @@ const start = async ()=> {
             console.log(`Server is listening on port: ${port}...`);
             await setMLmodelfromdb();
            
-            setInterval
-            (()=>{
-                let today = new Date();
-                // console.log(today);
-                let temp1 = (28 + 3*Math.random()*(Math.random()>0.5 ? 1: -1)).toFixed(3);
-                let temp2 = (28 + 3*Math.random()*(Math.random()>0.5 ? 1: -1)).toFixed(3);
-                let temp3 = (28 + 3*Math.random()*(Math.random()>0.5 ? 1: -1)).toFixed(3);
-                let temp4 = (28 + 3*Math.random()*(Math.random()>0.5 ? 1: -1)).toFixed(3);
-                // let mydata = {tempdata: {temp1, temp2, temp3, temp4}, timestamp : {date: today.getDate()+"-"+today.getMonth()+1+"-"+today.getFullYear(), time: (today.getHours())+":"+(today.getMinutes())+":"+(today.getSeconds())}};
-                // console.log(mydata);
+            // setInterval
+            // (()=>{
+            //     let today = new Date();
+            //     // console.log(today);
+            //     let temp1 = (28 + 3*Math.random()*(Math.random()>0.5 ? 1: -1)).toFixed(3);
+            //     let temp2 = (28 + 3*Math.random()*(Math.random()>0.5 ? 1: -1)).toFixed(3);
+            //     let temp3 = (28 + 3*Math.random()*(Math.random()>0.5 ? 1: -1)).toFixed(3);
+            //     let temp4 = (28 + 3*Math.random()*(Math.random()>0.5 ? 1: -1)).toFixed(3);
+            //     // let mydata = {tempdata: {temp1, temp2, temp3, temp4}, timestamp : {date: today.getDate()+"-"+today.getMonth()+1+"-"+today.getFullYear(), time: (today.getHours())+":"+(today.getMinutes())+":"+(today.getSeconds())}};
+            //     // console.log(mydata);
                 
-                PredictEmit(temp1,temp2,temp3,temp4);
-            },3000)
+            //     PredictEmit(temp1,temp2,temp3,temp4);
+            // },3000)
         
         // const S_port = new SerialPort.SerialPort({path:'COM3', baudRate:115200}, false); //Connect serial port to port COM3. Because my Arduino Board is connected on port COM3.
         // // const parser = S_port.pipe(new DelimiterParser({delimiter: '\r\n'})); //Read the line only when new line comes.

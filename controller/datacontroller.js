@@ -3,6 +3,7 @@ const excel = require('exceljs')
 const { Decimal128, BSONType } = require('mongodb');
 // const { Decimal128 } = require('bson');
 const {PassThrough} = require('stream');
+const {PredictEmit} = require('../predictemit.js');
 
 const  getdata = async (req,res) => {
     try{
@@ -96,7 +97,12 @@ const postdata = async (req,res) => {
 
 const dataFromEsp=async (req,res) =>{
     try{
-        console.log("data receiving from esp",req.query.temp1);
+        const temp1=req.query.temp1;
+        const temp2=req.query.temp2;
+        const temp3=req.query.temp3;
+        // console.log(typeof(temp1))
+        // console.log("data receiving from esp:- temp1=",req.query.temp1+" temp2=",req.query.temp2+" temp3=",req.query.temp3);
+        PredictEmit(temp1,temp2,temp3);
         return res.send("received")
     }
     catch{
